@@ -17,7 +17,7 @@ before_script:
 
 script:
   - COMPOSER_ROOT_VERSION=dev-master composer --prefer-source --dev install
-  - phpunit --configuration phpunit_$DB.xml --coverage-text
+  - phpunit --configuration phpunit.xml --coverage-text
 
 notifications:
   irc: "irc.freenode.org#travis"
