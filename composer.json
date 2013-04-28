@@ -1,0 +1,21 @@
+{
+	"name": "bus/orm",
+	"type": "library",
+	"description": "Bus ORM Component",
+	"keywords": [],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Artur Geraschenko",
+			"email": "arturgspb@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"autoload": {
+		"psr-0": { "Bus\\Component\\Orm\\": "" }
+	},
+	"target-dir": "Bus/Component/Orm",
+	"minimum-stability": "dev"
+}

@@ -1,0 +1,23 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+matrix:
+  allow_failures:
+    - php: 5.5
+
+env:
+  - DB=pgsql
+
+before_script:
+  - if [[ "$DB" == "pgsql" ]]; then psql -c "DROP DATABASE IF EXISTS hello_world_test;" -U postgres; fi
+  - if [[ "$DB" == "pgsql" ]]; then psql -c "create database hello_world_test;" -U postgres; fi
+
+script:
+  - COMPOSER_ROOT_VERSION=dev-master composer --prefer-source --dev install
+  - phpunit --configuration phpunit_$DB.xml --coverage-text
+
+notifications:
+  irc: "irc.freenode.org#travis"
